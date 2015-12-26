@@ -15,6 +15,18 @@
 		414829B01B9FE66B000D0113 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 414829AE1B9FE66B000D0113 /* LaunchScreen.xib */; };
 		414829BC1B9FE66B000D0113 /* Pierre_Penguin_Escapes_the_AntarcticTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414829BB1B9FE66B000D0113 /* Pierre_Penguin_Escapes_the_AntarcticTests.swift */; };
 		41696DF51BA92D8800CF7936 /* bee.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 41696DF41BA92D8800CF7936 /* bee.atlas */; };
+		46627A411C2C61B40005C09C /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A401C2C61B40005C09C /* GameSprite.swift */; };
+		46627A421C2C61B40005C09C /* GameSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A401C2C61B40005C09C /* GameSprite.swift */; };
+		46627A441C2C62AA0005C09C /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A431C2C62AA0005C09C /* Bee.swift */; };
+		46627A451C2C62AA0005C09C /* Bee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A431C2C62AA0005C09C /* Bee.swift */; };
+		46627A471C2C665C0005C09C /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A461C2C665C0005C09C /* ground.atlas */; };
+		46627A481C2C665C0005C09C /* ground.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A461C2C665C0005C09C /* ground.atlas */; };
+		46627A4A1C2C666C0005C09C /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A491C2C666C0005C09C /* Ground.swift */; };
+		46627A4B1C2C666C0005C09C /* Ground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A491C2C666C0005C09C /* Ground.swift */; };
+		46627A4D1C2C68AC0005C09C /* pierre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A4C1C2C68AC0005C09C /* pierre.atlas */; };
+		46627A4E1C2C68AC0005C09C /* pierre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A4C1C2C68AC0005C09C /* pierre.atlas */; };
+		46627A501C2C68B90005C09C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A4F1C2C68B90005C09C /* Player.swift */; };
+		46627A511C2C68B90005C09C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A4F1C2C68B90005C09C /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +52,12 @@
 		414829BA1B9FE66B000D0113 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		414829BB1B9FE66B000D0113 /* Pierre_Penguin_Escapes_the_AntarcticTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pierre_Penguin_Escapes_the_AntarcticTests.swift; sourceTree = "<group>"; };
 		41696DF41BA92D8800CF7936 /* bee.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = bee.atlas; sourceTree = "<group>"; };
+		46627A401C2C61B40005C09C /* GameSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSprite.swift; sourceTree = "<group>"; };
+		46627A431C2C62AA0005C09C /* Bee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bee.swift; sourceTree = "<group>"; };
+		46627A461C2C665C0005C09C /* ground.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; name = ground.atlas; path = bee.atlas/ground.atlas; sourceTree = "<group>"; };
+		46627A491C2C666C0005C09C /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
+		46627A4C1C2C68AC0005C09C /* pierre.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pierre.atlas; sourceTree = "<group>"; };
+		46627A4F1C2C68B90005C09C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,8 @@
 		414829931B9FE66B000D0113 = {
 			isa = PBXGroup;
 			children = (
+				46627A4C1C2C68AC0005C09C /* pierre.atlas */,
+				46627A461C2C665C0005C09C /* ground.atlas */,
 				41696DF41BA92D8800CF7936 /* bee.atlas */,
 				4148299E1B9FE66B000D0113 /* Pierre Penguin Escapes the Antarctic */,
 				414829B81B9FE66B000D0113 /* Pierre Penguin Escapes the AntarcticTests */,
@@ -84,7 +104,11 @@
 			children = (
 				414829A11B9FE66B000D0113 /* AppDelegate.swift */,
 				414829A51B9FE66B000D0113 /* GameScene.swift */,
+				46627A4F1C2C68B90005C09C /* Player.swift */,
 				414829A71B9FE66B000D0113 /* GameViewController.swift */,
+				46627A401C2C61B40005C09C /* GameSprite.swift */,
+				46627A431C2C62AA0005C09C /* Bee.swift */,
+				46627A491C2C666C0005C09C /* Ground.swift */,
 				414829A91B9FE66B000D0113 /* Main.storyboard */,
 				414829AC1B9FE66B000D0113 /* Images.xcassets */,
 				414829AE1B9FE66B000D0113 /* LaunchScreen.xib */,
@@ -204,6 +228,8 @@
 				414829B01B9FE66B000D0113 /* LaunchScreen.xib in Resources */,
 				414829AD1B9FE66B000D0113 /* Images.xcassets in Resources */,
 				414829AB1B9FE66B000D0113 /* Main.storyboard in Resources */,
+				46627A4D1C2C68AC0005C09C /* pierre.atlas in Resources */,
+				46627A471C2C665C0005C09C /* ground.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,6 +237,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46627A4E1C2C68AC0005C09C /* pierre.atlas in Resources */,
+				46627A481C2C665C0005C09C /* ground.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,7 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46627A4A1C2C666C0005C09C /* Ground.swift in Sources */,
+				46627A441C2C62AA0005C09C /* Bee.swift in Sources */,
+				46627A411C2C61B40005C09C /* GameSprite.swift in Sources */,
 				414829A61B9FE66B000D0113 /* GameScene.swift in Sources */,
+				46627A501C2C68B90005C09C /* Player.swift in Sources */,
 				414829A81B9FE66B000D0113 /* GameViewController.swift in Sources */,
 				414829A21B9FE66B000D0113 /* AppDelegate.swift in Sources */,
 			);
@@ -231,6 +263,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46627A421C2C61B40005C09C /* GameSprite.swift in Sources */,
+				46627A451C2C62AA0005C09C /* Bee.swift in Sources */,
+				46627A4B1C2C666C0005C09C /* Ground.swift in Sources */,
+				46627A511C2C68B90005C09C /* Player.swift in Sources */,
 				414829BC1B9FE66B000D0113 /* Pierre_Penguin_Escapes_the_AntarcticTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
