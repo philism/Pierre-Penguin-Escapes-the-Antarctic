@@ -13,7 +13,10 @@ class Ground: SKSpriteNode, GameSprite {
     // Create an optional property named groundTexture to store
     // the current ground texture:
     var groundTexture:SKTexture?
-
+    var jumpWidth = CGFloat()
+    // Note the instantiation value of 1 here:
+    var jumpCount = CGFloat(1)
+    
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize) {
         parentNode.addChild(self)
         self.size = size
@@ -56,9 +59,25 @@ class Ground: SKSpriteNode, GameSprite {
                 
                 tileCount++
             }
+        
+            // Find the width of one-third of the children nodes
+            jumpWidth = tileSize.width * floor(tileCount / 3)
         }
     }
     
     // Implement onTap to adhere to the protocol
     func onTap() {}
+
+    func checkForReposition(playerProgress:CGFloat) {
+        // The ground needs to jump forward
+        // every time the player has moved this distance:
+        let groundJumpPosition = jumpWidth * jumpCount
+        if playerProgress >= groundJumpPosition {
+            // The player has moved past the jump position!
+            // Move the ground forward:
+            self.position.x += jumpWidth
+            // Add one to the jump count:
+            jumpCount++
+        }
+    }
 }

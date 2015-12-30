@@ -37,5 +37,8 @@ class Bee: SKSpriteNode, GameSprite {
     // onTap is not wired up yet, but we have to implement this
     // function to adhere to our protocol.
     // We will explore touch events in the next chapter.
-    func onTap() {}
+    func onTap() {
+        self.xScale = 4
+        self.yScale = 4
+    }
 }

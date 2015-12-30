@@ -16,16 +16,20 @@ class Player: SKSpriteNode, GameSprite {
     var flyAnimation = SKAction()
     var soarAnimation = SKAction()
     
+    // Store whether we are flapping our wings or in free-fall:
+    var flapping = false
+    // Set a maximum upward force
+    // 57,000 feels good to me, adjust to taste:
+    let maxFlappingForce:CGFloat = 57000
+    // Pierre should slow down when he flies too high:
+    let maxHeight: CGFloat = 1000
+    
     func spawn(parentNode: SKNode, position: CGPoint, size: CGSize = CGSize(width: 64, height: 64)) {
         parentNode.addChild(self)
         createAnimations()
         self.size = size
         self.position = position
-        
-        // If we run an action with a key, "flapAnimation",
-        // we can later reference that key to remove the action.
-        self.runAction(flyAnimation, withKey: "flapAnimation")
-        
+        self.runAction(soarAnimation, withKey: "soarAnimation")
         // Create a physics body based on one frame of Pierre's animation.
         // We will use the third frame, when his wings are tucked in,
         // and use the size from the spawn function's parameters:
@@ -48,12 +52,12 @@ class Player: SKSpriteNode, GameSprite {
             
         // Create the flying animation:
         let flyFrames:[SKTexture] = [
-        textureAtlas.textureNamed("pierre-flying-1.png"),
-        textureAtlas.textureNamed("pierre-flying-2.png"),
-        textureAtlas.textureNamed("pierre-flying-3.png"),
-        textureAtlas.textureNamed("pierre-flying-4.png"),
-        textureAtlas.textureNamed("pierre-flying-3.png"),
-        textureAtlas.textureNamed("pierre-flying-2.png")
+            textureAtlas.textureNamed("pierre-flying-1.png"),
+            textureAtlas.textureNamed("pierre-flying-2.png"),
+            textureAtlas.textureNamed("pierre-flying-3.png"),
+            textureAtlas.textureNamed("pierre-flying-4.png"),
+            textureAtlas.textureNamed("pierre-flying-3.png"),
+            textureAtlas.textureNamed("pierre-flying-2.png")
             ]
         let flyAction = SKAction.animateWithTextures(flyFrames, timePerFrame: 0.03)
         // Group together the flying animation frames with a
@@ -70,6 +74,42 @@ class Player: SKSpriteNode, GameSprite {
     func onTap() {}
     
     func update() {
-
+        // If flapping, apply a new force to push Pierre higher.
+        if self.flapping {
+            var forceToApply = maxFlappingForce
+                
+            // Apply less force if Pierre is above position 600
+            if position.y > 600 {
+                // The higher Pierre goes, the more force we remove. 
+                // These next three lines determine the force to subtract:
+                let percentageOfMaxHeight = position.y / maxHeight
+                let flappingForceSubtraction = percentageOfMaxHeight * maxFlappingForce
+                forceToApply -= flappingForceSubtraction
+            }
+            self.physicsBody?.applyForce(CGVector(dx: 0, dy: forceToApply))
+            
+            // Limit Pierre's top speed as he climbs the y-axis.
+            // This prevents him from gaining enough momentum to shoot
+            // over our max height. We bend the physics for gameplay:
+            if self.physicsBody?.velocity.dy > 300 {
+                self.physicsBody?.velocity.dy = 300
+            }
+            // Set a constant velocity to the right:
+            self.physicsBody?.velocity.dx = 200
+        }
+    }
+    
+    // Begin the flap animation, set flapping to true:
+    func startFlapping() {
+        self.removeActionForKey("soarAnimation")
+        self.runAction(flyAnimation, withKey: "flapAnimation")
+        self.flapping = true
+    }
+    
+    // Stop the flap animation, set flapping to false:
+    func stopFlapping() {
+        self.removeActionForKey("flapAnimation")
+        self.runAction(soarAnimation, withKey: "soarAnimation")
+        self.flapping = false
     }
 }
