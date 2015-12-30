@@ -21,47 +21,16 @@ class GameScene: SKScene {
     var playerProgress = CGFloat()
     
     override func didMoveToView(view: SKView) {
-        self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue:
-            0.95, alpha: 1.0)
+        // Set a sky-blue background color:
+        self.backgroundColor = UIColor(red: 0.4, green: 0.6, blue: 0.95, alpha: 1.0)
+        
+        // Add the world node as a child of the scene:
+        self.addChild(world)
+        
         // Store the vertical center of the screen:
         screenCenterY = self.size.height / 2
         
-        // Add the world node as a child of the scene
-        self.addChild(world)
-        
-        // Create three new instances of the Bee class:
-        let bee2 = Bee()
-        let bee3 = Bee()
-        let bee4 = Bee()
-        // Use our spawn function to place the bees into the world:
-        bee2.spawn(world, position: CGPoint(x: 325, y: 325))
-        bee3.spawn(world, position: CGPoint(x: 200, y: 325))
-        bee4.spawn(world, position: CGPoint(x: 50, y: 200))
-        
-        
-        // Spawn a bat:
-        let bat = Bat()
-        bat.spawn(world, position: CGPoint(x: 400, y: 200))
-        // A blade:
-        let blade = Blade()
-        blade.spawn(world, position: CGPoint(x: 300, y: 76))
-        // A mad fly:
-        let madFly = MadFly()
-        madFly.spawn(world, position: CGPoint(x: 50, y: 50))
-        // A bronze coin:
-        let bronzeCoin = Coin()
-        bronzeCoin.spawn(world, position: CGPoint(x: 490, y: 250))
-        // A gold coin:
-        let goldCoin = Coin()
-        goldCoin.spawn(world, position: CGPoint(x: 460, y: 250))
-        goldCoin.turnToGold()
-        // A ghost!
-        let ghost = Ghost()
-        ghost.spawn(world, position: CGPoint(x: 50, y: 300))
-        // The powerup star:
-        let star = Star()
-        star.spawn(world, position: CGPoint(x: 250, y: 250))
-        
+        // Spawn the ground:
         let groundPosition = CGPoint(x: -self.size.width, y: 30)
         let groundSize = CGSize(width: self.size.width * 3, height: 0)
         ground.spawn(world, position: groundPosition, size: groundSize)
@@ -69,7 +38,6 @@ class GameScene: SKScene {
         // Spawn the player:
         player.spawn(world, position: initialPlayerPosition)
         
-        self.motionManager.startAccelerometerUpdates()
         // Set gravity
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
     }
