@@ -96,6 +96,7 @@
 		414829931B9FE66B000D0113 = {
 			isa = PBXGroup;
 			children = (
+				46580BAC1C59BE9D000BF874 /* Encounters */,
 				46054E6C1C33940700B8DDB9 /* enemies.atlas */,
 				41696DF41BA92D8800CF7936 /* bee.atlas */,
 				46054E5E1C338EF400B8DDB9 /* goods.atlas */,
@@ -163,6 +164,13 @@
 				414829BA1B9FE66B000D0113 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		46580BAC1C59BE9D000BF874 /* Encounters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Encounters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
