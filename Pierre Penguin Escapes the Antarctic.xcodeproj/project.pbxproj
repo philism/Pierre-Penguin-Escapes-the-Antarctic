@@ -34,6 +34,8 @@
 		46627A4D1C2C68AC0005C09C /* pierre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A4C1C2C68AC0005C09C /* pierre.atlas */; };
 		46627A4E1C2C68AC0005C09C /* pierre.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 46627A4C1C2C68AC0005C09C /* pierre.atlas */; };
 		46627A501C2C68B90005C09C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A4F1C2C68B90005C09C /* Player.swift */; };
+		46B014481C59C51300C30AEF /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46B014471C59C51300C30AEF /* EncounterBats.sks */; };
+		46B0144A1C59C9F000C30AEF /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B014491C59C9F000C30AEF /* EncounterManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		46627A491C2C666C0005C09C /* Ground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ground.swift; sourceTree = "<group>"; };
 		46627A4C1C2C68AC0005C09C /* pierre.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = pierre.atlas; sourceTree = "<group>"; };
 		46627A4F1C2C68B90005C09C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		46B014471C59C51300C30AEF /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
+		46B014491C59C9F000C30AEF /* EncounterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,7 @@
 		4148299E1B9FE66B000D0113 /* Pierre Penguin Escapes the Antarctic */ = {
 			isa = PBXGroup;
 			children = (
+				46B014491C59C9F000C30AEF /* EncounterManager.swift */,
 				414829A11B9FE66B000D0113 /* AppDelegate.swift */,
 				46054E641C33914800B8DDB9 /* Bat.swift */,
 				46627A431C2C62AA0005C09C /* Bee.swift */,
@@ -169,6 +174,7 @@
 		46580BAC1C59BE9D000BF874 /* Encounters */ = {
 			isa = PBXGroup;
 			children = (
+				46B014471C59C51300C30AEF /* EncounterBats.sks */,
 			);
 			name = Encounters;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				414829B01B9FE66B000D0113 /* LaunchScreen.xib in Resources */,
 				414829AD1B9FE66B000D0113 /* Images.xcassets in Resources */,
 				414829AB1B9FE66B000D0113 /* Main.storyboard in Resources */,
+				46B014481C59C51300C30AEF /* EncounterBats.sks in Resources */,
 				46627A4D1C2C68AC0005C09C /* pierre.atlas in Resources */,
 				46627A471C2C665C0005C09C /* ground.atlas in Resources */,
 				46054E6D1C33940700B8DDB9 /* enemies.atlas in Resources */,
@@ -284,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46627A4A1C2C666C0005C09C /* Ground.swift in Sources */,
+				46B0144A1C59C9F000C30AEF /* EncounterManager.swift in Sources */,
 				46627A441C2C62AA0005C09C /* Bee.swift in Sources */,
 				46054E691C33927F00B8DDB9 /* Blade.swift in Sources */,
 				46627A411C2C61B40005C09C /* GameSprite.swift in Sources */,
