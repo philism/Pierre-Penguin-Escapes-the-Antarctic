@@ -36,6 +36,9 @@
 		46627A501C2C68B90005C09C /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46627A4F1C2C68B90005C09C /* Player.swift */; };
 		46B014481C59C51300C30AEF /* EncounterBats.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46B014471C59C51300C30AEF /* EncounterBats.sks */; };
 		46B0144A1C59C9F000C30AEF /* EncounterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B014491C59C9F000C30AEF /* EncounterManager.swift */; };
+		46B0144C1C59D5F300C30AEF /* EncounterBees.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46B0144B1C59D5F300C30AEF /* EncounterBees.sks */; };
+		46B0144E1C59D62A00C30AEF /* EncounterCoins.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46B0144D1C59D62A00C30AEF /* EncounterCoins.sks */; };
+		46B014501C59D6A500C30AEF /* EncounterMadFlies.sks in Resources */ = {isa = PBXBuildFile; fileRef = 46B0144F1C59D6A500C30AEF /* EncounterMadFlies.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		46627A4F1C2C68B90005C09C /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		46B014471C59C51300C30AEF /* EncounterBats.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBats.sks; sourceTree = "<group>"; };
 		46B014491C59C9F000C30AEF /* EncounterManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncounterManager.swift; sourceTree = "<group>"; };
+		46B0144B1C59D5F300C30AEF /* EncounterBees.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterBees.sks; sourceTree = "<group>"; };
+		46B0144D1C59D62A00C30AEF /* EncounterCoins.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterCoins.sks; sourceTree = "<group>"; };
+		46B0144F1C59D6A500C30AEF /* EncounterMadFlies.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = EncounterMadFlies.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				46B014471C59C51300C30AEF /* EncounterBats.sks */,
+				46B0144B1C59D5F300C30AEF /* EncounterBees.sks */,
+				46B0144D1C59D62A00C30AEF /* EncounterCoins.sks */,
+				46B0144F1C59D6A500C30AEF /* EncounterMadFlies.sks */,
 			);
 			name = Encounters;
 			sourceTree = "<group>";
@@ -262,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B014501C59D6A500C30AEF /* EncounterMadFlies.sks in Resources */,
 				41696DF51BA92D8800CF7936 /* bee.atlas in Resources */,
 				414829B01B9FE66B000D0113 /* LaunchScreen.xib in Resources */,
 				414829AD1B9FE66B000D0113 /* Images.xcassets in Resources */,
@@ -270,6 +280,8 @@
 				46627A4D1C2C68AC0005C09C /* pierre.atlas in Resources */,
 				46627A471C2C665C0005C09C /* ground.atlas in Resources */,
 				46054E6D1C33940700B8DDB9 /* enemies.atlas in Resources */,
+				46B0144C1C59D5F300C30AEF /* EncounterBees.sks in Resources */,
+				46B0144E1C59D62A00C30AEF /* EncounterCoins.sks in Resources */,
 				46054E5F1C338EF400B8DDB9 /* goods.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

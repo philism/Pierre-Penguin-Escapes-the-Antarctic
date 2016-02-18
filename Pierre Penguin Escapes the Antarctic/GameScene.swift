@@ -20,6 +20,8 @@ class GameScene: SKScene {
     let initialPlayerPosition = CGPoint(x: 150, y: 250)
     var playerProgress = CGFloat()
     let encounterManager = EncounterManager()
+    var nextEncounterSpawnPosition = CGFloat(150)
+    let powerUpStar = Star()
     
     override func didMoveToView(view: SKView) {
         // Set a sky-blue background color:
@@ -36,14 +38,14 @@ class GameScene: SKScene {
         let groundSize = CGSize(width: self.size.width * 3, height: 0)
         ground.spawn(world, position: groundPosition, size: groundSize)
         
+        // Spawn the star, out of the way for now
+        powerUpStar.spawn(world, position: CGPoint(x: -2000, y: -2000))
+        
         // Spawn the player:
         player.spawn(world, position: initialPlayerPosition)
         
         // Set gravity
         self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
-        
-        encounterManager.addEncountersToWorld(self.world)
-        encounterManager.encounters[0].position = CGPoint(x: 300, y: 0)
     }
     
     override func didSimulatePhysics() {
@@ -62,10 +64,28 @@ class GameScene: SKScene {
         let worldXPos = -(player.position.x * world.xScale - (self.size.width / 3))
         // Move the world for our adjustment:
         world.position = CGPoint(x: worldXPos, y: worldYPos)
-            
+        
         // Keep track of how far the player has flown
         playerProgress = player.position.x - initialPlayerPosition.x
         ground.checkForReposition(playerProgress)
+        
+        // Check to see if we should set a new encounter:
+        if player.position.x > nextEncounterSpawnPosition {
+            encounterManager.placeNextEncounter(nextEncounterSpawnPosition)
+            nextEncounterSpawnPosition += 1400
+            
+            // Each encounter has a 1 in 10 chance of spawning a star power-up:
+            let starRoll = Int(arc4random_uniform(10))
+            if starRoll == 0 {
+                if abs(player.position.x - powerUpStar.position.x) > 1200 {
+                    // Only move the star if it's already far away from the player.
+                    let randomYPos = CGFloat(arc4random_uniform(400))
+                    powerUpStar.position = CGPoint(x: nextEncounterSpawnPosition, y: randomYPos)
+                    powerUpStar.physicsBody?.angularVelocity = 0
+                    powerUpStar.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
+                }
+            }
+        }
     }
 
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)  {
